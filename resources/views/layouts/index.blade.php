@@ -6,21 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
+  <script src="{{ mix('js/admin.js') }}" defer></script>
 {{--   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css" rel="stylesheet">
   <link href="../../public/assets/plugins/DataTables-1.10.20/datatables.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../public/assets/icons/font-awesome-5.12.0/css/all.min.css">
-  <link rel="stylesheet" href="../../public/css/app.css">
-  <link href="../../public/assets/plugins/select2-4.0.13/css/select2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../public/css/custom-widgets/select2.css"> --}}
-<!--   <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = '../../public/assets/icons/font-awesome-5.12.0/css/all.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script> -->
+   --}}
 </head>
 <body class="d-flex flex-column h-100">
   <nav id="top_navbar" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark p-0 shadow">
     <a class="navbar-brand text-nowrap pl-1" href="#" style="max-width: 80%;">
     <!-- <img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
       class="d-inline-block" alt=""> -->
-      <img id="top_navbar_logo" src="../../public/images/logo_white.png" class="d-inline-block pl-0" >
+      <img id="top_navbar_logo" src="{{asset('/images/logo_white.png')}}" class="d-inline-block pl-0" >
       <!-- Doofenshmirtz Evil Inc. -->
     </a>
     <button class="btn btn-link d-md-none" type="button" data-toggle="collapse" data-target="#collapsible_navbar_container" aria-controls="collapsible_navbar_container"
@@ -187,7 +184,7 @@
           <div class="clearfix"></div>
           <h3 class="text-capitalize">Title</h3>
           <button id="reinit_table" class="btn btn-sm btn-success float-right">Reinitialize Table</button>
-          <table class="table table-bordered table-striped table-sm dt-responsive nowrap" style="width:100%" id="table_1">
+          <table id="table_1" class="table table-bordered table-striped table-sm dt-responsive nowrap" style="width:100%">
             <thead class="thead-light">
               <tr>
                 <th>Header</th>
@@ -233,7 +230,7 @@
       $(".large").select2();
       $('#table_1').DataTable({
         destroy: true,
-        ajax: '../../public/arrays.txt'
+        ajax: "{{asset('arrays.txt')}}"
       });
     });
     document.getElementById('reinit_table').addEventListener('click', function() {

@@ -10,7 +10,18 @@
 //Bootstrap 4.5
 @import 'bootstrap/scss/bootstrap';
 
+//Select2
+@import 'select2';
+@import 'custom-widgets/select2.scss';
 
-.title {
-  color: orange !important;
-}
+//DataTables
+@import 'datatables.net-bs4';
+
+//FontAwesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+//Admin styles
+@import 'admin_styles';
